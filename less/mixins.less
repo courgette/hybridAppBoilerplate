@@ -1,0 +1,419 @@
+/*General function*/
+
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+  
+ 
+}
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+}
+
+.visually-hidden {
+	position: absolute;
+	left: -7000px;
+	overflow: hidden;
+}
+
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+.rotation(@deg:5deg){
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+/*Shadow*/
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+.box-inner-shadow(@arguments) {
+  -webkit-box-shadow:inset @arguments;
+  -moz-box-shadow:inset @arguments;
+  box-shadow:inset @arguments;
+}
+
+/*Column*/
+
+.column(@nbre, @dist){
+	-moz-column-count: @nbre;
+	-webkit-column-count: @nbre;
+	-o-column-count: @nbre;
+	column-count: @nbre;
+	-moz-column-gap: @dist;
+	-webkit-column-gap: @dist;
+	-o-column-gap: @dist;
+	column-gap: @dist;
+}
+
+/*Gradient*/
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               from(@start),
+                               to(@stop));
+  background: -webkit-linear-gradient(top, @stop, @start);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(top, @stop, @start);                            
+  
+}
+
+/*Horizontal Gradient*/
+
+.horizontalGradient(@color:#F5F5F5, @start: #EEE, @stop: #FFF){
+    background: @color; /* Old browsers */
+    background: -moz-linear-gradient(left,  @start 0%, @stop 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,@start), color-stop(100%,@stop)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  @start 0%,@stop 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  @start 0%,@stop 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  @start 0%,@stop 100%); /* IE10+ */
+    background: linear-gradient(to right,  @start 0%,@stop 100%); /* W3C */
+}
+
+/*Transition*/
+
+.transition(@effect:all, @duration:0.2s, @ease:ease-out) {
+  -webkit-transition: @effect @duration @ease;
+  -moz-transition: @effect @duration @ease;
+  transition: @effect @duration @ease;
+}
+
+/*Transfom*/
+
+.scale(@ratio:1.5){
+	-webkit-transform:scale(@ratio);
+ 	-moz-transform:scale(@ratio);
+	transform:scale(@ratio);
+}
+
+.transform(@argument){
+  -webkit-transform: @argument;
+  -moz-transform: @argument;
+  -ms-transform: @argument;
+  -o-transform: @argument;
+  transform: @argument; 
+}
+
+.bg(@arguments){
+	background: @arguments;
+}
+
+.bgpos(@arguments){
+	background-position: @arguments;
+}
+
+.upper{
+	text-transform: uppercase;
+}
+
+.line{
+	text-decoration: underline;
+}
+
+.tnone{
+	text-decoration: none;
+}
+
+.posR{
+	position: relative;
+}
+
+.posA{
+	position: absolute;
+}
+
+.posF{
+	position: fixed;
+}
+
+.dblock{
+	display: block;
+}
+
+.dnone{
+	display: none;
+}
+
+.dinline{
+  display: inline;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.normal{
+	font-weight: normal;
+}
+
+.italic{
+	font-style: italic;
+}
+
+.accessHide{
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.ulreset{
+  ul, li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@fbody:0.8em;
+@fbodypx: 13em; /*Put in em to convert in em*/
+
+/*En partant du fait que le body est a 13px */
+
+.gf(@size, @value:@fbodypx){
+	font-size: @size/@value;
+}
+
+.center{
+	margin: 0 auto;
+	width: 980px;
+}
+
+.size(@w:5px, @h:5px){
+	width: @w;
+	height: @h;
+}
+
+.square(@s:5px){
+	.size(@s, @s);
+}
+
+.clearfix {
+  zoom: 1;
+  &:before, &:after {
+      content: "";
+      display: table;
+  }
+  &:after {
+      clear: both;
+  }
+}
+
+.wysiwyg(@colorTitle, @colorLink, @colorText, @puceBg){
+	.gf(13);
+	color: @colorText;
+	line-height: 1.4em;
+	h2, h3, h4, h5, h6{
+		color: @colorTitle;
+		margin: 0.5em 0;
+	}
+	h2{
+		.gf(18);
+	}
+	h3, h4{
+		.gf(16);
+	}
+	h5, h6{
+		.gf(13);
+	}
+	a{
+		color: @colorLink;
+		.bold;
+		.tnone;
+		&:hover{
+			.line;
+		}
+	}
+	ul{
+		margin: 0.4em 0;
+		padding: 0 0 0 1em;
+		li{
+			list-style: none;
+			margin: 0 0 0.5em 0;
+			padding: 0;
+			color: @colorText;
+			.bg(@puceBg);
+			padding-left: 0.7em;
+		}
+	}
+	ol{
+		padding-left: 1.4em;
+		li{
+			color: @colorText;
+			margin-bottom: 0.3em;
+			.posR;
+			z-index: 3;
+			&:before{
+				content: ' ';
+				width: 15px;
+				height: 17px;
+				.posA;
+				left: -22px;
+				z-index: -1;
+				top: 1px;
+				.bg(@colorLink);
+			}
+		}
+	}	
+	strong, b{
+		color: @colorText;
+	}
+	table{
+	  border-color: lighten(@colorText, 30%);
+		tbody, tr{
+		  border-color: lighten(@colorText, 30%);
+		}
+		td{
+			padding: 0.5em;
+			border-color: lighten(@colorText, 30%);
+		}
+	}
+	p, div{
+		color: @colorText;
+		margin: 0 0 1em;
+		line-height: 1.7em;
+	}
+}
+
+.Arial{
+	font-family: 'Arial', sans-serif;
+}
+
+/*========
+
+ = Arrow please LESS http://cssarrowplease.com/
+
+========*/
+
+.arrow_box(@borderColor, @bgColor, @sizeArrow, @sizeBorder) { 
+	.posR;
+	.bg(@bgColor); 
+	border: @sizeBorder solid @borderColor;
+	&:after, &:before{
+		top: 100%; 
+		border: solid transparent; 
+		content: " "; 
+		.square(0); 
+		.posA;
+		pointer-events: none;
+	}
+	&:after{
+		border-top-color: @bgColor;
+		border-width: @sizeArrow;
+		left: 50%;
+		margin-left: -@sizeArrow;
+	}
+	&:before{
+		border-top-color: @borderColor;
+		border-width: @sizeArrow + 6;
+		left: 50%;
+		margin-left: -(@sizeArrow + 6);
+	}
+ } 
+
+
+
+/*========
+
+ = Custom Shadow
+
+========*/
+
+.curlShadow(@bgcolor, @deg){
+  .bg(@bgcolor);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+  .posR;
+  &:before, &:after{
+    content: '';
+    z-index: -1;
+    .posA;
+    left: 10px;
+    bottom: 10px;
+    .size(70%, 55%);
+    .box-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+    .transform(skew(-@deg) rotate(-6deg)) 
+  }
+  &:after{
+    left: auto;
+    right: 10px;
+    .transform(skew(@deg) rotate(6deg));
+  }
+}
+
+
+/*========
+
+ = Button Css3
+
+========*/
+
+.buttonCss3(@bgColor){
+  .gradient(@bgColor,darken(@bgColor, 15%),@bgColor);
+  color: #FFF;
+  padding: 0.8em 1.5em;
+  .rounded(4px);
+  .upper;
+  border: 0;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+  box-shadow:0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 darken(@bgColor, 20%), 0 4px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid lighten(@bgColor, 10%);
+  position: relative;
+  bottom: 0;
+  .transition(all,0.2s,ease);
+  
+  &:hover{
+    box-shadow:0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 0px 0 darken(@bgColor, 20%), 0 0px 2px rgba(0, 0, 0, 0.5);
+    bottom: -4px;
+  }
+  &:active{
+    .gradient(#FFF, lighten(@bgColor, 50%), #FFF);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    color: @bgColor;
+    border: 1px solid #FFF;
+  }
+}
